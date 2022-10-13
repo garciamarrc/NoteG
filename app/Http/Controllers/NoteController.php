@@ -22,6 +22,17 @@ class NoteController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string'
+        ]);
+
+        Note::create([
+            'user_id' => Auth::user()->id,
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+
+        return redirect('dashboard');
     }
 }

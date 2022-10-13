@@ -9,10 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h1 class="text-3xl">Bienvenido, {{ auth()->user()->name }}</h1>
+                    <div class="md:flex justify-between">
+                        <h1 class="text-3xl">Bienvenido, {{ auth()->user()->name }}</h1>
+                        <a href="">
+                            <x-blue-button :text="'Nueva nota'" class="my-5 md:my-0"></x-blue-button>
+                        </a>
+                    </div>
                     <h2 class="text-xl my-4">Estas son tus notas</h2>
 
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                         @forelse ($notes as $note)
                             <x-note-card :title="$note->title" :description="$note->description" :btnText="'Ver más...'"></x-note-card>
                         @empty

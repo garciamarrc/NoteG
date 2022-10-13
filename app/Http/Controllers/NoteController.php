@@ -14,4 +14,14 @@ class NoteController extends Controller
 
         return view('dashboard', compact('notes'));
     }
+
+    public function create()
+    {
+        return view('notes.create');
+    }
+
+    public function store(Request $request)
+    {
+        dd($request);
+    }
 }

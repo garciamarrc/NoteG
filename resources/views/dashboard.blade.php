@@ -9,22 +9,23 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="md:flex justify-between">
-                        <h1 class="text-3xl">Bienvenido, {{ auth()->user()->name }}</h1>
-                        <a href="">
-                            <x-blue-button :text="'Nueva nota'" class="my-5 md:my-0"></x-blue-button>
-                        </a>
+                    <div>
+                        <h1 class="text-4xl">Bienvenido, {{ auth()->user()->name }}</h1>
                     </div>
-                    <h2 class="text-xl my-4">Estas son tus notas</h2>
-
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        @forelse ($notes as $note)
-                            <x-note-card :title="$note->title" :description="$note->description" :btnText="'Ver más...'"></x-note-card>
-                        @empty
-                            <h1 class="text-xl">Aun no tienes notas...</h1>
-                        @endforelse
-                    </div>
+                    <h2 class="text-2xl my-4">Estas son tus notas</h2>
+                    @if (!$notes->isEmpty())
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            @foreach ($notes as $note)
+                                <x-note-card :title="$note->title" :description="$note->description" :btnText="'Ver más...'"></x-note-card>
+                            @endforeach
+                        </div>
+                    @else
+                        <h1 class="text-xl">Aun no tienes notas, intenta <a href="{{ route('notes.create') }}"
+                                class="text-blue-600 hover:text-blue-400">creando
+                                una</a></h1>
                 </div>
+
+                @endif
             </div>
         </div>
     </div>

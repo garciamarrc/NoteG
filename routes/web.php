@@ -22,6 +22,7 @@ Route::controller(NoteController::class)->middleware(['auth', 'verified'])->grou
     Route::get('/dashboard', 'index')->name('dashboard');
     Route::get('/create-note', 'create')->name('notes.create');
     Route::post('/create-note', 'store')->name('notes.store');
+    Route::get('/delete/{id}', 'destroy')->name('notes.destroy');
 });
 
 require __DIR__ . '/auth.php';

@@ -16,7 +16,8 @@
                     @if (!$notes->isEmpty())
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                             @foreach ($notes as $note)
-                                <x-note-card :title="$note->title" :description="$note->description" :btnText="'Ver más...'"></x-note-card>
+                                <x-note-card :note="$note">
+                                </x-note-card>
                             @endforeach
                         </div>
                     @else

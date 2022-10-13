@@ -13,8 +13,11 @@
                     <h2 class="text-xl my-4">Estas son tus notas</h2>
 
                     <div class="grid grid-cols-3 gap-4">
-                        <x-note-card :title="'Some'" :description="'Desc'" :btnText="'Ver más...'"></x-note-card>
-                        <x-note-card :title="'Some'" :description="'Desc'" :btnText="'Ver más...'"></x-note-card>
+                        @forelse ($notes as $note)
+                            <x-note-card :title="$note->title" :description="$note->description" :btnText="'Ver más...'"></x-note-card>
+                        @empty
+                            <h1 class="text-xl">Aun no tienes notas...</h1>
+                        @endforelse
                     </div>
                 </div>
             </div>

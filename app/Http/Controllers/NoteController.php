@@ -36,6 +36,11 @@ class NoteController extends Controller
         return redirect('dashboard');
     }
 
+    public function edit(Note $id)
+    {
+        dd($id);
+    }
+
     public function destroy(Note $id)
     {
         $id->delete();

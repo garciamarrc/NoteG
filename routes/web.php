@@ -22,8 +22,9 @@ Route::controller(NoteController::class)->middleware(['auth', 'verified'])->grou
     Route::get('/dashboard', 'index')->name('dashboard');
     Route::get('/create', 'create')->name('notes.create');
     Route::post('/create', 'store')->name('notes.store');
-    Route::get('/edit/{id}', 'edit')->name('notes.edit');
-    Route::get('/delete/{id}', 'destroy')->name('notes.destroy');
+    Route::get('/edit/{note}', 'edit')->name('notes.edit');
+    Route::post('/update/{note}', 'update')->name('notes.update');
+    Route::get('/delete/{note}', 'destroy')->name('notes.destroy');
 });
 
 require __DIR__ . '/auth.php';

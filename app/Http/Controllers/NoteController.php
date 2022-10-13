@@ -36,14 +36,28 @@ class NoteController extends Controller
         return redirect('dashboard');
     }
 
-    public function edit(Note $id)
+    public function edit(Note $note)
     {
-        dd($id);
+        return view('notes.edit', compact('note'));
     }
 
-    public function destroy(Note $id)
+    public function update(Request $request, Note $note)
     {
-        $id->delete();
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string'
+        ]);
+
+        $note->title = $request->title;
+        $note->description = $request->description;
+        $note->save();
+
+        return redirect('dashboard');
+    }
+
+    public function destroy(Note $note)
+    {
+        $note->delete();
 
         return redirect('dashboard');
     }

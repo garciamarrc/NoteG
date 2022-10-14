@@ -29,7 +29,7 @@
                             <div class="mt-4">
                                 <x-input-label :value="'Descripción'"></x-input-label>
                                 <textarea rows="4" name="description"
-                                    class="' w-full block rounded shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'">{{ old('description') }}</textarea>
+                                    class="w-full block rounded shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition ease-in-out duration-500">{{ old('description') }}</textarea>
                                 @error('description')
                                     <x-alert class="bg-red-100 text-red-700" :message="$message" />
                                 @enderror

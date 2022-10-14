@@ -20,6 +20,9 @@
                                 </x-note-card>
                             @endforeach
                         </div>
+                        <div class="mt-8">
+                            {{ $notes->links() }}
+                        </div>
                     @else
                         <h1 class="text-xl">Aun no tienes notas, intenta <a href="{{ route('notes.create') }}"
                                 class="text-blue-600 hover:text-blue-400">crear

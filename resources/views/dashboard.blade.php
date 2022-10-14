@@ -22,7 +22,7 @@
                         </div>
                     @else
                         <h1 class="text-xl">Aun no tienes notas, intenta <a href="{{ route('notes.create') }}"
-                                class="text-blue-600 hover:text-blue-400">creando
+                                class="text-blue-600 hover:text-blue-400">crear
                                 una</a></h1>
                 </div>
 

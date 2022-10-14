@@ -15,8 +15,8 @@
                             @csrf
                             <div class="mt-4">
                                 <x-input-label :value="'Título'"></x-input-label>
-                                <x-text-input value="{{ old('title') }}" type="text" name="title"
-                                    class="block mt-1 w-full" />
+                                <x-text-input autocomplete="off" value="{{ old('title') }}" type="text"
+                                    name="title" class="block mt-1 w-full" />
                                 @error('title')
                                     <x-alert class="bg-red-100 text-red-700" :message="$message" />
                                 @enderror

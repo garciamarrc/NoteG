@@ -14,24 +14,24 @@
                     <!-- Navigation Links Auth -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
+                            {{ __('Mis notas') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('notes.create')" :active="request()->routeIs('notes.create')">
-                            {{ __('Create note') }}
+                            {{ __('Nueva nota') }}
                         </x-nav-link>
                     </div>
                 @endauth
                 @guest
                     <!-- Navigation Links Guest -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('login')" :active="request()->routeIs('dashboard')">
-                            {{ __('Login') }}
+                        <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                            {{ __('Ingresar') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('register')" :active="request()->routeIs('notes.create')">
+                        <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
                             {{ __('Registrarse') }}
                         </x-nav-link>
                     </div>
@@ -68,7 +68,7 @@
                                 <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Cerrar sesión') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
@@ -96,16 +96,16 @@
         <div class="pt-2 pb-3 space-y-1">
             @auth
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                    {{ __('Mis notas') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('notes.create')" :active="request()->routeIs('notes.create')">
-                    {{ __('Create note') }}
+                    {{ __('Nueva nota') }}
                 </x-responsive-nav-link>
             @endauth
 
             @guest
                 <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')">
-                    {{ __('Login') }}
+                    {{ __('Ingresar') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
                     {{ __('Registrarse') }}
@@ -129,7 +129,7 @@
                         <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('Cerrar sesión') }}
                         </x-responsive-nav-link>
                     </form>
                 </div>

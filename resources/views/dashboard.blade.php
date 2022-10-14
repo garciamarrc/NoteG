@@ -14,7 +14,7 @@
                     </div>
                     <h2 class="text-2xl my-4">Estas son tus notas</h2>
                     @if (!$notes->isEmpty())
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             @foreach ($notes as $note)
                                 <x-note-card :note="$note">
                                 </x-note-card>

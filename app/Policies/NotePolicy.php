@@ -10,6 +10,16 @@ class NotePolicy
 {
     use HandlesAuthorization;
 
+    public function show(User $user, Note $note)
+    {
+        return $user->id === $note->user_id;
+    }
+
+    public function edit(User $user, Note $note)
+    {
+        return $user->id === $note->user_id;
+    }
+
     public function update(User $user, Note $note)
     {
         return $user->id === $note->user_id;

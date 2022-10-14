@@ -38,11 +38,15 @@ class NoteController extends Controller
 
     public function show(Note $note)
     {
+        $this->authorize('show', $note);
+
         return view('notes.show', compact('note'));
     }
 
     public function edit(Note $note)
     {
+        $this->authorize('edit', $note);
+
         return view('notes.edit', compact('note'));
     }
 

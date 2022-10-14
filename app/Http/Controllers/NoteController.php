@@ -33,7 +33,7 @@ class NoteController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect('dashboard');
+        return redirect('dashboard')->with('message', 'Nota creada')->with('color', 'green');
     }
 
     public function show(Note $note)
@@ -57,13 +57,13 @@ class NoteController extends Controller
         $note->description = $request->description;
         $note->save();
 
-        return redirect('dashboard');
+        return redirect('dashboard')->with('message', 'Nota actualizada')->with('color', 'green');
     }
 
     public function destroy(Note $note)
     {
         $note->delete();
 
-        return redirect('dashboard');
+        return redirect('dashboard')->with('message', 'Nota eliminada')->with('color', 'red');
     }
 }

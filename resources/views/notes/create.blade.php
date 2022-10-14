@@ -9,9 +9,14 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div>
-                        <x-back-icon />
+                        <div class="flex justify-between">
+                            <x-back-icon href="{{ route('dashboard') }}" />
+                            <span>
+                                <x-blue-button form="create-note-form" type="submit" :text="'Guardar'"></x-blue-button>
+                            </span>
+                        </div>
                         <h1 class="text-4xl">Crea una nueva nota</h1>
-                        <form action="{{ route('notes.store') }}" method="POST">
+                        <form id="create-note-form" action="{{ route('notes.store') }}" method="POST">
                             @csrf
                             <div class="mt-4">
                                 <x-input-label :value="'Título'"></x-input-label>
@@ -28,9 +33,6 @@
                                 @error('description')
                                     <x-alert class="bg-red-100 text-red-700" :message="$message" />
                                 @enderror
-                            </div>
-                            <div class="mt-4">
-                                <x-blue-button type="submit" :text="'Guardar'"></x-blue-button>
                             </div>
                         </form>
                     </div>

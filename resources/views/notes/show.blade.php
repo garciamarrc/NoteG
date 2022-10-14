@@ -9,15 +9,17 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div>
-                        <x-back-icon href="{{ route('dashboard') }}" />
+                        <div class="flex justify-between">
+                            <x-back-icon href="{{ route('dashboard') }}" />
+                            <a href="{{ route('notes.edit', $note) }}">
+                                <x-blue-button type="button" :text="'Editar'"></x-blue-button>
+                            </a>
+                        </div>
                         <h1 class="text-4xl break-words">{{ $note->title }}</h1>
                         <div class="mt-4">
                             <p class="text-gray-700 text-base mb-4 break-words">{!! nl2br($note->description) !!}</p>
                         </div>
                         <div class="mt-4">
-                            <a href="{{ route('notes.edit', $note) }}">
-                                <x-blue-button type="button" :text="'Editar'"></x-blue-button>
-                            </a>
                         </div>
                     </div>
                 </div>

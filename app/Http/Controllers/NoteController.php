@@ -36,6 +36,11 @@ class NoteController extends Controller
         return redirect('dashboard');
     }
 
+    public function show(Note $note)
+    {
+        return view('notes.show', compact('note'));
+    }
+
     public function edit(Note $note)
     {
         return view('notes.edit', compact('note'));

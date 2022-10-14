@@ -53,6 +53,8 @@ class NoteController extends Controller
             'description' => 'required|string'
         ]);
 
+        $this->authorize('update', $note);
+
         $note->title = $request->title;
         $note->description = $request->description;
         $note->save();
@@ -62,6 +64,8 @@ class NoteController extends Controller
 
     public function destroy(Note $note)
     {
+        $this->authorize('delete', $note);
+
         $note->delete();
 
         return redirect('dashboard')->with('message', 'Nota eliminada')->with('color', 'red');

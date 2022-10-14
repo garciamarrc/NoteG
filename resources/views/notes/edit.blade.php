@@ -17,7 +17,7 @@
                                 <x-text-input value="{{ $note->title }}" type="text" name="title"
                                     class="block mt-1 w-full" />
                                 @error('title')
-                                    <x-alert :color="'red'" :message="$message" />
+                                    <x-alert class="bg-red-100 text-red-700" :message="$message" />
                                 @enderror
                             </div>
                             <div class="mt-4">
@@ -25,7 +25,7 @@
                                 <textarea rows="4" name="description"
                                     class="' w-full block rounded shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'">{{ $note->description }}</textarea>
                                 @error('description')
-                                    <x-alert :color="'red'" :message="$message" />
+                                    <x-alert class="bg-red-100 text-red-700" :message="$message" />
                                 @enderror
                             </div>
                             <div class="mt-4">

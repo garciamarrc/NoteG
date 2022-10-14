@@ -6,7 +6,7 @@
     </x-slot>
 
     @if (session('message'))
-        <x-alert :color="session('color')" :message="session('message')" />
+        <x-alert :message="session('message')" class="bg-{{ session('color') }}-100 text-{{ session('color') }}-700" />
     @endif
 
     <div class="py-12">

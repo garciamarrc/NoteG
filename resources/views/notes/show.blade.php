@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div>
-                        <x-back-icon />
+                        <x-back-icon href="{{ route('dashboard') }}" />
                         <h1 class="text-4xl">{{ $note->title }}</h1>
                         <div class="mt-4">
                             <p class="text-gray-700 text-base mb-4 break-words">{!! nl2br($note->description) !!}</p>

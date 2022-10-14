@@ -15,7 +15,7 @@
                         </div>
                         <div class="mt-4">
                             <a href="{{ route('notes.edit', $note) }}">
-                                <x-blue-button type="button" :text="'Actualizar'"></x-blue-button>
+                                <x-blue-button type="button" :text="'Editar'"></x-blue-button>
                             </a>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ class NoteController extends Controller
         $note->description = $request->description;
         $note->save();
 
-        return redirect('dashboard')->with('message', 'Nota actualizada')->with('color', 'blue');
+        return redirect('dashboard')->with('message', 'Nota actualizada')->with('color', 'green');
     }
 
     public function destroy(Note $note)

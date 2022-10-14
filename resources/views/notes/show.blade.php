@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight break-words">
             {{ __($note->title) }}
         </h2>
     </x-slot>
@@ -10,7 +10,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div>
                         <x-back-icon href="{{ route('dashboard') }}" />
-                        <h1 class="text-4xl">{{ $note->title }}</h1>
+                        <h1 class="text-4xl break-words">{{ $note->title }}</h1>
                         <div class="mt-4">
                             <p class="text-gray-700 text-base mb-4 break-words">{!! nl2br($note->description) !!}</p>
                         </div>

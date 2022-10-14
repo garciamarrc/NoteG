@@ -9,6 +9,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div>
+                        <x-back-icon />
                         <h1 class="text-4xl">Crea una nueva nota</h1>
                         <form action="{{ route('notes.store') }}" method="POST">
                             @csrf

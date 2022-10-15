@@ -40,6 +40,7 @@
             function HandleDeleteNote() {
                 Swal.fire({
                     title: '¿De verdad quieres eliminar esta nota?',
+                    icon: 'question',
                     showCancelButton: true,
                     confirmButtonColor: '#dc2626',
                     confirmButtonText: 'Eliminar',
